@@ -77,12 +77,6 @@ npm install
 # Start the app (client + server)
 npm run dev
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/aceacb8a-5de7-4155-b88a-76fbcacbb9b9
-
 ## Run Locally
 
 **Prerequisites:**  Node.js
