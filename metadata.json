@@ -1,0 +1,6 @@
+{
+  "name": "Sentinel",
+  "description": "A real-time crisis detection and coordination platform that unifies guests, staff, and emergency services during hospitality emergencies.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}

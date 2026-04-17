@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-heading: 'Inter', sans-serif;
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --radius-lg: 0.75rem;
+    --radius-md: calc(var(--radius-lg) - 2px);
+    --radius-sm: calc(var(--radius-lg) - 4px);
+    --radius-xl: 1rem;
+}
+
+:root {
+    --background: #0A0E1A;
+    --foreground: #F1F5F9;
+    --card: rgba(20, 25, 39, 0.8);
+    --card-foreground: #F1F5F9;
+    --popover: rgba(20, 25, 39, 0.95);
+    --popover-foreground: #F1F5F9;
+    --primary: #3B82F6;
+    --primary-foreground: #FFFFFF;
+    --secondary: rgba(31, 41, 55, 0.5);
+    --secondary-foreground: #F1F5F9;
+    --muted: rgba(31, 41, 55, 0.3);
+    --muted-foreground: #94A3B8;
+    --accent: rgba(59, 130, 246, 0.1);
+    --accent-foreground: #F1F5F9;
+    --destructive: #EF4444;
+    --destructive-foreground: #FFFFFF;
+    --border: rgba(31, 41, 55, 0.5);
+    --input: rgba(31, 41, 55, 0.3);
+    --ring: #3B82F6;
+    --warning: #F59E0B;
+    --success: #10B981;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      linear-gradient(rgba(31, 41, 55, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 41, 55, 0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    min-height: 100vh;
+  }
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/[0.02] border border-white/5;
+}
+
+.bg-sleek-surface {
+  background: var(--card);
+  backdrop-filter: blur(8px);
+}
+
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(31, 41, 55, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 41, 55, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.critical-pulse {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
